@@ -15,7 +15,7 @@ class WeatherActivitySuggester {
             [5, "cooking", 0, 10, 15],
             [6, "relaxation", 1, 5, 9],
             [7, "music", 1, 2, 5],
-            [8, "busywork", 0, 0, 11]
+            [8, "busywork", 0, -15, 36]
         ];
         this.initEventListeners();
     }
