@@ -59,7 +59,7 @@ class WeatherActivitySuggester {
     
             this.getActivities();
         } catch (error) {
-            this.showData.html('<span class="error">API ERROR</span>');
+            this.showData.html('<span class="error">NO city named: '+ this.city +' found</span>');
             this.showActivities.html('');
         }
     }

@@ -22,7 +22,7 @@ const getData = city => {
         showData.append(`<span class="dataTime ${timeClass}"><i class="fa-regular fa-${timeIcon}"></i><span>It's ${timeClass}, ${slice(condition)}</span></span>`);
     })
     .fail(() => {
-        showData.html('<span class="error">API ERROR</span>');
+        showData.html('<span class="error">NO city named: '+ city +' found</span>');
     });
 };
 
