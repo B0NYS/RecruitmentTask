@@ -49,15 +49,14 @@ class WeatherActivitySuggester {
             const cityApi = JSON.stringify(response.location.name);
             const condition = JSON.stringify(response.current.condition.text);
             this.isDay = JSON.stringify(response.current.is_day);
-
+    
+            const timeClass = this.isDay == 1 ? 'day' : 'night';
+            const timeIcon = this.isDay == 1 ? 'sun' : 'moon';
+    
             this.showData.html(`<span class="dataHeader">The current temperature in ${this.slice(cityApi)} is ${this.tempC}C/${tempF}F</span>`);
-
-            if (this.isDay == 1) {
-                this.showData.append(`<span class="dataTime day"><i class="fa-regular fa-sun"></i><span>It's daytime, ${this.slice(condition)}</span></span>`);
-            } else {
-                this.showData.append(`<span class="dataTime night"><i class="fa-regular fa-moon"></i><span>It's night, ${this.slice(condition)}</span></span>`);
-            }
-
+    
+            this.showData.append(`<span class="dataTime ${timeClass}"><i class="fa-regular fa-${timeIcon}"></i><span>It's ${timeClass}, ${this.slice(condition)}</span></span>`);
+    
             this.getActivities();
         } catch (error) {
             this.showData.html('<span class="error">API ERROR</span>');
@@ -75,7 +74,7 @@ class WeatherActivitySuggester {
 
             $.getJSON('http://www.boredapi.com/api/activity?type=' + suitableActivities[randomIndex], (data) => {
                 const activitiesReposne = JSON.stringify(data.activity);
-                this.showActivities.html('Your random activity: ' + activitiesReposne);
+                this.showActivities.html('Your weather based activity: ' + activitiesReposne);
             })
         } else {
             this.showActivities.html('No suitable activities found');
