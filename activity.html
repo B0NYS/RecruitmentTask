@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Activity</title>
+        <script src="https://kit.fontawesome.com/3ccd1faf4e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/lesscss/style.css" />
+    </head>
+    <body>
+
+    <header class="header">
+        <section class="navbar-container">
+            <div class="wrapper">
+                <a href="./" class="brand"><i class="fa-solid fa-temperature-half"></i></a>
+                <button type="button" class="burger" id="burger">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+                <span class="overlay" id="overlay"></span>
+                <nav class="navbar" id="navbar">
+                <ul class="menu">
+                    <li class="menu-item"><a href="./">Main page</a></li>
+                    <li class="menu-item"><a href="weather.html">Weather</a></li>
+                    <li class="menu-item active"><a href="activity.html">Activity</a></li>
+                </ul>
+                </nav>
+            </div>
+        </section>
+    </header>
+
+    <div class="container activity">
+        <div class="content">
+            <h1>Check activities depending on weather at your location</h1>
+
+            <div class="input">
+                <input type="text" class="cityInput" placeholder="Enter city name">
+                <button class="sendRequest">Search</button>
+            </div>
+
+            <div class="showData"></div>
+            <div class="showActivities"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/activity.js"></script>
+    </body>
+</html>

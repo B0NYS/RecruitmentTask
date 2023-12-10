@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@Lato: 'Lato', sans-serif;
+@base-space: 8px;
+@breakpoint-min: 300px;
+@breakpoint-xs: 460px;
+@breakpoint-sm: 576px;
+@breakpoint-md: 768px;
+@breakpoint-lg: 992px;
+@breakpoint-xl: 1200px;
+
+.responsiveMax(@maxWidth; @rules) {
+    @media all and (max-width: @maxWidth) {
+        @rules();
+    }
+}
+
+.responsive(@maxWidth; @rules) {
+    @media only screen and (max-width: @maxWidth) {
+        @rules();
+    }
+}
